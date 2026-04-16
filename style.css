@@ -1,0 +1,116 @@
+body {
+    background: #111;
+    color: white;
+    text-align: center;
+    font-family: Arial;
+  }
+  
+  h1 {
+    margin-top: 20px;
+  }
+  
+/* Container */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+  }
+
+  .voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 8px 15px;
+    background: gold;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  
+  .voltar:hover {
+    background: #e6c200;
+  }
+  
+  /* Cards */
+  .card {
+    background: #1e1e1e;
+    padding: 30px;
+    width: 250px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid transparent;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    border: 2px solid gold;
+  }
+  
+  .card h2 {
+    margin-bottom: 10px;
+  }
+
+  /* Slot container */
+  .slot {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    gap: 15px;
+  }
+  
+  /* Cada rolo */
+  .rolo {
+    width: 80px;
+    height: 100px;
+    background: #222;
+    border: 3px solid gold;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  /* Botão */
+  button {
+    padding: 10px 30px;
+    font-size: 18px;
+    background: gold;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  #resultado {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  .cartas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px;
+  }
+  
+  .carta {
+    width: 80px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    transition: 0.2s;
+  }
+  
+  .carta:hover {
+    transform: scale(1.1);
+  }
+  
+  .selecionada {
+    border: 3px solid gold;
+  }
