@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Spin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button class="voltar" onclick="voltarHome()">⬅ Voltar</button>
+
+<h1>🎯 Color Spin</h1>
+
+<!-- Linha central (onde decide o resultado) -->
+<div class="ponteiro"></div>
+
+<!-- Container da roleta -->
+<div class="janela">
+  <div class="faixa" id="faixa"></div>
+</div>
+
+<!-- Apostas -->
+<div class="botoes">
+  <button onclick="apostar('vermelho')">Vermelho</button>
+  <button onclick="apostar('azul')">Azul</button>
+  <button onclick="apostar('dourado')">Dourado</button>
+</div>
+
+<p id="resultado"></p>
+
+<script src="roleta.js"></script>
+</body>
+</html>

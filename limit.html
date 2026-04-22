@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Limit Rush</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <button class="voltar" onclick="voltarHome()">⬅ Voltar</button>
+
+    <h1>📊 Limit Rush</h1>
+    <p>Escolha sua aposta e veja onde a barra para!</p>
+
+    <!-- Barra -->
+    <div class="barra-container">
+        <div class="barra" id="barra"></div>
+    </div>
+
+    <h2 id="porcentagem">0%</h2>
+
+    <!-- Apostas -->
+    <div class="apostas">
+
+        <h3>Aposta Baixa</h3>
+        <button onclick="apostar('baixo', 25)">≤ 25%</button>
+        <button onclick="apostar('baixo', 50)">≤ 50%</button>
+        <button onclick="apostar('baixo', 75)">≤ 75%</button>
+        <button onclick="apostar('baixo', 100)">≤ 100%</button>
+
+        <h3>Aposta Média</h3>
+        <button onclick="apostar('medio', 1)">1%</button>
+        <button onclick="apostar('medio', 50)">50%</button>
+        <button onclick="apostar('medio', 100)">100%</button>
+
+        <h3>Aposta Alta</h3>
+        <input type="number" id="custom" placeholder="Ex: 37">
+        <button onclick="apostarCustom()">Apostar %</button>
+
+    </div>
+
+    <p id="resultado"></p>
+
+    <script src="limit.js"></script>
+</body>
+
+</html>
