@@ -152,29 +152,42 @@ body {
 
   /*         ROLETA          */
 
-  .janela {
-    width: 300px;
-    height: 100px;
-    overflow: hidden;
-    margin: 30px auto;
-    border: 3px solid white;
-    position: relative;
-  }
-  
-  .faixa {
-    display: flex;
-    transition: transform 4s cubic-bezier(0.1, 0.7, 0.1, 1);
-  }
-  
-  .faixa img {
-    width: 100px;
-    height: 100px;
-  }
-  
-  /* Linha central */
-  .ponteiro {
-    width: 4px;
-    height: 110px;
-    background: white;
-    margin: auto;
-  }
+/* Ponteiro central */
+.ponteiro {
+  width: 4px;
+  height: 100px;
+  background: white;
+  margin: 20px auto;
+}
+
+/* Janela */
+.janela {
+  width: 300px;
+  height: 100px;
+  overflow: hidden;
+  margin: auto;
+  border: 3px solid white;
+  position: relative;
+}
+
+/* Faixa que se move */
+.faixa {
+  display: flex;
+  transform: translateX(0);
+}
+
+/* Imagens */
+.faixa img {
+  width: 100px;
+  height: 100px;
+}
+
+/* Botões */
+.botoes button {
+  margin: 10px;
+  padding: 10px 20px;
+  background: gold;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}

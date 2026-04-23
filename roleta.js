@@ -13,29 +13,22 @@ function gerarCor() {
   return "dourado";
 }
 
-function criarSequencia(resultadoFinal) {
-  let faixa = [];
+function girar() {
+  const faixa = document.getElementById("faixa");
 
-  for (let i = 0; i < 30; i++) {
-    faixa.push(gerarCor());
+  // reset
+  faixa.style.transition = "none";
+  faixa.style.transform = "translateX(0)";
+  faixa.innerHTML = "";
+
+  let sequencia = [];
+
+  // cria sequência
+  for (let i = 0; i < 20; i++) {
+    sequencia.push(gerarCor());
   }
 
-  // garante que o resultado final fique no centro
-  faixa.push(resultadoFinal);
-
-  return faixa;
-}
-
-function girar() {
-  const faixaDiv = document.getElementById("faixa");
-  const resultadoTexto = document.getElementById("resultado");
-
-  faixaDiv.innerHTML = "";
-
-  let resultado = gerarCor();
-  let sequencia = criarSequencia(resultado);
-
-  // cria imagens
+  // renderiza
   sequencia.forEach(cor => {
     let img = document.createElement("img");
 
@@ -43,16 +36,57 @@ function girar() {
     if (cor === "azul") img.src = "img/a.png";
     if (cor === "dourado") img.src = "img/d.png";
 
-    faixaDiv.appendChild(img);
+    img.dataset.cor = cor; // 🔥 IMPORTANTE
+
+    faixa.appendChild(img);
   });
 
-  // animação
-  let deslocamento = (sequencia.length - 3) * 100; 
-  faixaDiv.style.transform = `translateX(-${deslocamento}px)`;
+  faixa.offsetHeight;
 
+  faixa.style.transition = "transform 4s cubic-bezier(0.1, 0.7, 0.1, 1)";
+
+  let larguraItem = 100;
+  let centroJanela = 150;
+
+  let posicaoFinal = 10;
+
+  let deslocamento =
+    (posicaoFinal * larguraItem) - centroJanela;
+
+  faixa.style.transform = `translateX(-${deslocamento}px)`;
+
+  // 🔥 AGORA PEGAMOS O RESULTADO REAL
   setTimeout(() => {
-    mostrarResultado(resultado);
+    pegarResultadoReal();
   }, 4000);
+}
+
+function pegarResultadoReal() {
+  const faixa = document.getElementById("faixa");
+  const janela = document.querySelector(".janela");
+  const imagens = faixa.querySelectorAll("img");
+
+  let rectJanela = janela.getBoundingClientRect();
+let centroJanela = rectJanela.left + (rectJanela.width / 2);
+
+  let resultadoReal = null;
+
+  imagens.forEach(img => {
+    let rect = img.getBoundingClientRect();
+    let meioImg = rect.left + (rect.width / 2);
+
+    let distancia = Math.abs(centroJanela - meioImg);
+
+    // pega a imagem mais próxima do centro
+    if (!resultadoReal || distancia < resultadoReal.distancia) {
+      resultadoReal = {
+        cor: img.dataset.cor,
+        distancia: distancia
+      };
+    }
+  });
+
+  mostrarResultado(resultadoReal.cor);
 }
 
 function mostrarResultado(resultado) {
