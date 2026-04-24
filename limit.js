@@ -54,7 +54,7 @@ function verificarResultado(valor) {
   const resultado = document.getElementById("resultado");
 
   if (tipo === "baixo") {
-    if (valor <= aposta) {
+    if (valor >= aposta && valor <= aposta + 25) {
       resultado.innerHTML = "Você ganhou ✅";
     } else {
       resultado.innerHTML = "Você perdeu ❌";
