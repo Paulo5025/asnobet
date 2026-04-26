@@ -5,7 +5,7 @@ const container = document.getElementById("cartas");
 // gerar cartas automaticamente
 for (let i = 1; i <= 10; i++) {
   let img = document.createElement("img");
-  img.src = `img/${i}.png`; // pasta das imagens
+  img.src = `../assets/img/${i}.png`; // pasta das imagens
   img.classList.add("carta");
 
   img.onclick = () => selecionarCarta(i, img);

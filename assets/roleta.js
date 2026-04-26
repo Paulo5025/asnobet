@@ -32,9 +32,9 @@ function girar() {
   sequencia.forEach(cor => {
     let img = document.createElement("img");
 
-    if (cor === "vermelho") img.src = "img/v.png";
-    if (cor === "azul") img.src = "img/a.png";
-    if (cor === "dourado") img.src = "img/d.png";
+    if (cor === "vermelho") img.src = "../assets/img/v.png";
+    if (cor === "azul") img.src = "../assets/img/a.png";
+    if (cor === "dourado") img.src = "../assets/img/d.png";
 
     img.dataset.cor = cor; // 🔥 IMPORTANTE
 
