@@ -51,6 +51,7 @@ const UI = (() => {
     roleta:  'pageRoleta',
     cartas:  'pageCartas',
     limit:   'pageLimit',
+    rocket:  'pageRocket',
   };
 
   /**

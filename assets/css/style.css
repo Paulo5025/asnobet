@@ -222,6 +222,8 @@ button { cursor: pointer; }
   border-radius: var(--radius);
   padding: 32px;
   margin-bottom: 20px;
+  position: relative;
+  overflow: hidden
 }
 
 /* ── Bet selector ── */
@@ -499,6 +501,28 @@ button { cursor: pointer; }
 .cor-btn.azul:hover,     .cor-btn.azul.selected     { background: var(--blue); }
 .cor-btn.dourado:hover,  .cor-btn.dourado.selected  { background: var(--gold); }
 
+.faixa-img {
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+.btn-img {
+  width: 50px;
+  height: auto;
+  object-fit: contain;
+  margin-right: 6px;
+}
+
+.cor-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
 /* ── Lucky Draw ── */
 .cartas-grid {
   display: grid;
@@ -644,6 +668,56 @@ button { cursor: pointer; }
   transition: border-color .2s;
 }
 .custom-input:focus { border-color: var(--gold-dim); }
+/* ── Donkey Rocket ── */
+
+.multiplier {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.rocket-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.rocket-bg::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    rgba(0,255,100,0.15) 1px,
+    transparent 1px
+  );
+  background-size: 100% 40px;
+  animation: subirGrafico 1s linear infinite;
+}
+
+@keyframes subirGrafico {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-40px);
+  }
+}
+
+/* garantir que foguete fique na frente */
+.rocket-img {
+  width: 120px;
+  margin: 20px auto;
+  display: block;
+  transition: transform 0.1s linear;
+  position: relative;
+  z-index: 2;
+}
+
 
 /* ── Responsive ── */
 @media (max-width: 520px) {

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ASNOBET Casino</title>
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" href="..\assets\img\iconeA.png">
 </head>
+
 <body>
 
   <!-- ── HEADER ────────────────────────────────────── -->
@@ -15,7 +18,7 @@
       <h1>ASNOBET</h1>
       <div class="logo-diamond"></div>
     </div>
-    <p>Casino &nbsp;·&nbsp; Est. 2025</p>
+    <p>Casino &nbsp;·&nbsp; desde 2026</p>
   </header>
 
   <!-- ── SALDO ─────────────────────────────────────── -->
@@ -62,6 +65,14 @@
         <span class="card-arrow">→</span>
       </div>
 
+      <div class="game-card" data-navigate="rocket">
+        <span class="card-badge">Risco alto</span>
+        <span class="card-emoji">🚀</span>
+        <div class="card-title">Donkey Rocket</div>
+        <p class="card-desc">Saia antes da explosão!</p>
+        <span class="card-arrow">→</span>
+      </div>
+
     </div>
   </div>
 
@@ -84,9 +95,9 @@
           <div class="bet-label">Valor da aposta</div>
           <div class="bet-btns">
             <button class="bet-btn active" data-valor="10">R$ 10</button>
-            <button class="bet-btn"        data-valor="25">R$ 25</button>
-            <button class="bet-btn"        data-valor="50">R$ 50</button>
-            <button class="bet-btn"        data-valor="100">R$ 100</button>
+            <button class="bet-btn" data-valor="25">R$ 25</button>
+            <button class="bet-btn" data-valor="50">R$ 50</button>
+            <button class="bet-btn" data-valor="100">R$ 100</button>
           </div>
         </div>
 
@@ -103,6 +114,7 @@
       <button class="btn-back" data-navigate="home">← Voltar</button>
       <div class="page-title">🎯 Color Spin</div>
     </div>
+
     <div class="game-area">
       <div class="game-panel">
 
@@ -117,19 +129,30 @@
           <div class="bet-label">Valor da aposta</div>
           <div class="bet-btns">
             <button class="bet-btn active" data-valor="10">R$ 10</button>
-            <button class="bet-btn"        data-valor="25">R$ 25</button>
-            <button class="bet-btn"        data-valor="50">R$ 50</button>
+            <button class="bet-btn" data-valor="25">R$ 25</button>
+            <button class="bet-btn" data-valor="50">R$ 50</button>
           </div>
         </div>
 
         <p class="bet-label" style="margin-bottom:8px">Escolha sua cor:</p>
+
         <div class="cor-btns">
-          <button class="cor-btn vermelho" data-cor="vermelho">🔴 Vermelho</button>
-          <button class="cor-btn azul"     data-cor="azul">🔵 Azul</button>
-          <button class="cor-btn dourado"  data-cor="dourado">⭐ Dourado</button>
+          <button class="cor-btn vermelho" data-cor="vermelho">
+            <img src="../assets/img/v.png" class="btn-img"> Vermelho
+          </button>
+
+          <button class="cor-btn azul" data-cor="azul">
+            <img src="../assets/img/a.png" class="btn-img"> Azul
+          </button>
+
+          <button class="cor-btn dourado" data-cor="dourado">
+            <img src="../assets/img/d.png" class="btn-img"> Dourado
+          </button>
         </div>
 
-        <div class="resultado neutro" id="resultadoRoleta">Selecione uma cor para apostar</div>
+        <div class="resultado neutro" id="resultadoRoleta">
+          Selecione uma cor para apostar
+        </div>
 
       </div>
     </div>
@@ -156,9 +179,9 @@
           <div class="bet-label">Valor da aposta</div>
           <div class="bet-btns">
             <button class="bet-btn active" data-valor="10">R$ 10</button>
-            <button class="bet-btn"        data-valor="25">R$ 25</button>
-            <button class="bet-btn"        data-valor="50">R$ 50</button>
-            <button class="bet-btn"        data-valor="100">R$ 100</button>
+            <button class="bet-btn" data-valor="25">R$ 25</button>
+            <button class="bet-btn" data-valor="50">R$ 50</button>
+            <button class="bet-btn" data-valor="100">R$ 100</button>
           </div>
         </div>
 
@@ -178,7 +201,8 @@
     <div class="game-area">
       <div class="game-panel">
 
-        <p style="font-size:.8rem;color:var(--muted);margin-bottom:4px">A barra para em um número aleatório. Você acerta?</p>
+        <p style="font-size:.8rem;color:var(--muted);margin-bottom:4px">A barra para em um número aleatório. Você
+          acerta?</p>
 
         <div class="barra-container">
           <div class="barra" id="barra"></div>
@@ -222,6 +246,40 @@
     </div>
   </div>
 
+  <!-- ── PAGE: Donkey Rocket ───────────────────────────────── -->
+
+  <div id="pageRocket" class="page" data-page="rocket">
+  <div class="page-header">
+    <button class="btn-back" data-navigate="home">← Voltar</button>
+    <div class="page-title">🚀 Donkey Rocket</div>
+  </div>
+
+  <div class="game-area">
+    <div class="game-panel">
+      <div class="rocket-bg" id="rocketBg"></div>
+      <img src="../assets/img/foguete.png" id="rocketImg" class="rocket-img">
+
+      <div class="multiplier" id="multiplier">1.00x</div>
+
+      <div class="bet-section">
+        <div class="bet-label">Valor da aposta</div>
+        <div class="bet-btns">
+          <button class="bet-btn active" data-valor="10">R$ 10</button>
+          <button class="bet-btn" data-valor="25">R$ 25</button>
+          <button class="bet-btn" data-valor="50">R$ 50</button>
+        </div>
+      </div>
+
+      <button class="btn-main" id="btnRocket">INICIAR</button>
+
+      <div class="resultado neutro" id="resultadoRocket">
+        Clique em iniciar 🚀
+      </div>
+
+    </div>
+  </div>
+</div>
+
   <!-- ── TOAST ─────────────────────────────────────── -->
   <div class="toast" id="toast"></div>
 
@@ -232,7 +290,9 @@
   <script src="../assets/js/roleta.js"></script>
   <script src="../assets/js/cartas.js"></script>
   <script src="../assets/js/limit.js"></script>
+  <script src="../assets/js/rocket.js"></script>
   <script src="../assets/js/app.js"></script>
 
 </body>
+
 </html>

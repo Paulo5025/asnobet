@@ -88,6 +88,10 @@ const App = (() => {
       }
     });
 
+    // Rocket
+    document.getElementById('btnRocket')?.addEventListener('click', Rocket.iniciar);
+
+
     // Recarregar saldo
     document.getElementById('btnRecarregar')?.addEventListener('click', () => {
       Store.resetarSaldo();
@@ -100,3 +104,8 @@ const App = (() => {
 
 // ── Inicializa após o DOM estar pronto ────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', App.init);
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("btnRocket")
+    .addEventListener("click", Rocket.iniciar);
+});
