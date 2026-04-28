@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASNOBET Casino</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- ── HEADER ────────────────────────────────────── -->
+  <header>
+    <div class="logo-line">
+      <div class="logo-diamond"></div>
+      <h1>ASNOBET</h1>
+      <div class="logo-diamond"></div>
+    </div>
+    <p>Casino &nbsp;·&nbsp; Est. 2025</p>
+  </header>
+
+  <!-- ── SALDO ─────────────────────────────────────── -->
+  <div class="saldo-bar">
+    <span>💰</span>
+    <span class="saldo-label">Saldo</span>
+    <span class="saldo-valor" id="saldoDisplay">R$ 1.000</span>
+    <button class="btn-reload" id="btnRecarregar">+ Recarregar</button>
+  </div>
+
+  <!-- ── PAGE: HOME ────────────────────────────────── -->
+  <div id="pageHome" class="page active">
+    <div class="home-grid">
+
+      <div class="game-card" data-navigate="jackpot">
+        <span class="card-badge">Clássico</span>
+        <span class="card-emoji">🎰</span>
+        <div class="card-title">Jackpot</div>
+        <p class="card-desc">Gire os rolos e tente acertar o 777</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="game-card" data-navigate="roleta">
+        <span class="card-badge">Alta adrenalina</span>
+        <span class="card-emoji">🎯</span>
+        <div class="card-title">Color Spin</div>
+        <p class="card-desc">Aposte em cores e multiplique seu dinheiro</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="game-card" data-navigate="cartas">
+        <span class="card-badge">Sorte pura</span>
+        <span class="card-emoji">🃏</span>
+        <div class="card-title">Lucky Draw 10</div>
+        <p class="card-desc">Escolha uma carta e tente a sorte!</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="game-card" data-navigate="limit">
+        <span class="card-badge">Desafio</span>
+        <span class="card-emoji">📊</span>
+        <div class="card-title">Limit Rush</div>
+        <p class="card-desc">Você sabe a porcentagem que vai parar?</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── PAGE: JACKPOT ─────────────────────────────── -->
+  <div id="pageJackpot" class="page">
+    <div class="page-header">
+      <button class="btn-back" data-navigate="home">← Voltar</button>
+      <div class="page-title">🎰 Jackpot</div>
+    </div>
+    <div class="game-area">
+      <div class="game-panel">
+
+        <div class="slot-machine">
+          <div class="rolo" id="rolo1">7</div>
+          <div class="rolo" id="rolo2">7</div>
+          <div class="rolo" id="rolo3">7</div>
+        </div>
+
+        <div class="bet-section">
+          <div class="bet-label">Valor da aposta</div>
+          <div class="bet-btns">
+            <button class="bet-btn active" data-valor="10">R$ 10</button>
+            <button class="bet-btn"        data-valor="25">R$ 25</button>
+            <button class="bet-btn"        data-valor="50">R$ 50</button>
+            <button class="bet-btn"        data-valor="100">R$ 100</button>
+          </div>
+        </div>
+
+        <button class="btn-main" id="btnJackpot">GIRAR</button>
+        <div class="resultado neutro" id="resultadoJackpot">Aposte e gire para começar</div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PAGE: ROLETA ──────────────────────────────── -->
+  <div id="pageRoleta" class="page">
+    <div class="page-header">
+      <button class="btn-back" data-navigate="home">← Voltar</button>
+      <div class="page-title">🎯 Color Spin</div>
+    </div>
+    <div class="game-area">
+      <div class="game-panel">
+
+        <div class="roleta-wrapper">
+          <div class="pointer"></div>
+          <div class="janela">
+            <div class="faixa" id="faixa"></div>
+          </div>
+        </div>
+
+        <div class="bet-section" style="margin-top:16px">
+          <div class="bet-label">Valor da aposta</div>
+          <div class="bet-btns">
+            <button class="bet-btn active" data-valor="10">R$ 10</button>
+            <button class="bet-btn"        data-valor="25">R$ 25</button>
+            <button class="bet-btn"        data-valor="50">R$ 50</button>
+          </div>
+        </div>
+
+        <p class="bet-label" style="margin-bottom:8px">Escolha sua cor:</p>
+        <div class="cor-btns">
+          <button class="cor-btn vermelho" data-cor="vermelho">🔴 Vermelho</button>
+          <button class="cor-btn azul"     data-cor="azul">🔵 Azul</button>
+          <button class="cor-btn dourado"  data-cor="dourado">⭐ Dourado</button>
+        </div>
+
+        <div class="resultado neutro" id="resultadoRoleta">Selecione uma cor para apostar</div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PAGE: CARTAS ──────────────────────────────── -->
+  <div id="pageCartas" class="page">
+    <div class="page-header">
+      <button class="btn-back" data-navigate="home">← Voltar</button>
+      <div class="page-title">🃏 Lucky Draw 10</div>
+    </div>
+    <div class="game-area">
+      <div class="game-panel">
+
+        <p style="font-size:.8rem;color:var(--muted);margin-bottom:16px">Escolha uma das cartas abaixo:</p>
+        <div class="cartas-grid" id="cartasGrid"></div>
+
+        <div class="carta-revelada" id="cartaRevelada">
+          <div class="carta-sub">Carta sorteada</div>
+          <div class="carta-num" id="cartaNum">?</div>
+        </div>
+
+        <div class="bet-section">
+          <div class="bet-label">Valor da aposta</div>
+          <div class="bet-btns">
+            <button class="bet-btn active" data-valor="10">R$ 10</button>
+            <button class="bet-btn"        data-valor="25">R$ 25</button>
+            <button class="bet-btn"        data-valor="50">R$ 50</button>
+            <button class="bet-btn"        data-valor="100">R$ 100</button>
+          </div>
+        </div>
+
+        <button class="btn-main" id="btnCartas">SACAR CARTA</button>
+        <div class="resultado neutro" id="resultadoCartas">Selecione uma carta para começar</div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PAGE: LIMIT ───────────────────────────────── -->
+  <div id="pageLimit" class="page">
+    <div class="page-header">
+      <button class="btn-back" data-navigate="home">← Voltar</button>
+      <div class="page-title">📊 Limit Rush</div>
+    </div>
+    <div class="game-area">
+      <div class="game-panel">
+
+        <p style="font-size:.8rem;color:var(--muted);margin-bottom:4px">A barra para em um número aleatório. Você acerta?</p>
+
+        <div class="barra-container">
+          <div class="barra" id="barra"></div>
+        </div>
+        <div class="porcentagem-display" id="porcentagem">0%</div>
+
+        <div class="apostas-grid">
+
+          <div class="aposta-grupo">
+            <div class="aposta-grupo-label">Aposta Baixa — intervalo de 25%</div>
+            <div class="limit-btns">
+              <button class="limit-btn" data-tipo="baixo" data-valor="0">0–25%</button>
+              <button class="limit-btn" data-tipo="baixo" data-valor="25">25–50%</button>
+              <button class="limit-btn" data-tipo="baixo" data-valor="50">50–75%</button>
+              <button class="limit-btn" data-tipo="baixo" data-valor="75">75–100%</button>
+            </div>
+          </div>
+
+          <div class="aposta-grupo">
+            <div class="aposta-grupo-label">Aposta Média — número exato</div>
+            <div class="limit-btns">
+              <button class="limit-btn" data-tipo="medio" data-valor="1">1%</button>
+              <button class="limit-btn" data-tipo="medio" data-valor="50">50%</button>
+              <button class="limit-btn" data-tipo="medio" data-valor="100">100%</button>
+            </div>
+          </div>
+
+          <div class="aposta-grupo">
+            <div class="aposta-grupo-label">Aposta Alta — margem ±5%</div>
+            <div class="custom-row">
+              <input type="number" id="customLimit" class="custom-input" placeholder="Ex: 37" min="1" max="100">
+              <button class="limit-btn" id="btnCustomLimit">Apostar %</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="resultado neutro" id="resultadoLimit">Selecione uma aposta acima</div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TOAST ─────────────────────────────────────── -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ── SCRIPTS (ordem importa) ───────────────────── -->
+  <script src="../assets/js/store.js"></script>
+  <script src="../assets/js/ui.js"></script>
+  <script src="../assets/js/jackpot.js"></script>
+  <script src="../assets/js/roleta.js"></script>
+  <script src="../assets/js/cartas.js"></script>
+  <script src="../assets/js/limit.js"></script>
+  <script src="../assets/js/app.js"></script>
+
+</body>
+</html>
