@@ -52,6 +52,7 @@ const UI = (() => {
     cartas:  'pageCartas',
     limit:   'pageLimit',
     rocket:  'pageRocket',
+    craps:   'pageCraps',
   };
 
   /**

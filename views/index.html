@@ -18,7 +18,7 @@
       <h1>ASNOBET</h1>
       <div class="logo-diamond"></div>
     </div>
-    <p>Casino &nbsp;·&nbsp; desde 2026</p>
+    <p>Cassino &nbsp;·&nbsp; desde 2026</p>
   </header>
 
   <!-- ── SALDO ─────────────────────────────────────── -->
@@ -70,6 +70,14 @@
         <span class="card-emoji">🚀</span>
         <div class="card-title">Donkey Rocket</div>
         <p class="card-desc">Saia antes da explosão!</p>
+        <span class="card-arrow">→</span>
+      </div>
+
+      <div class="game-card" data-navigate="craps">
+        <span class="card-badge">Clássico Vegas</span>
+        <span class="card-emoji">🎲</span>
+        <div class="card-title">Dados</div>
+        <p class="card-desc">Role os dados e domine a mesa!</p>
         <span class="card-arrow">→</span>
       </div>
 
@@ -280,6 +288,95 @@
   </div>
 </div>
 
+  <!-- ── PAGE: CRAPS ──────────────────────────────── -->
+  <div id="pageCraps" class="page">
+    <div class="page-header">
+      <button class="btn-back" data-navigate="home">← Voltar</button>
+      <div class="page-title">🎲 Dados</div>
+    </div>
+    <div class="game-area">
+
+      <!-- Mesa de feltro -->
+      <div class="craps-table">
+
+        <!-- Dados animados -->
+        <div class="craps-dados">
+          <div class="craps-dado" id="crapsDado1">⚄</div>
+          <div class="craps-dado" id="crapsDado2">⚄</div>
+        </div>
+
+        <!-- Fase e Point -->
+        <div class="craps-status">
+          <div class="craps-status-item">
+            <div class="craps-status-label">Fase</div>
+            <div class="craps-fase neutro" id="crapsFase">Lançamento Inicial</div>
+          </div>
+          <div class="craps-status-item">
+            <div class="craps-status-label">Ponto</div>
+            <div class="craps-point-val" id="crapsPoint" data-ativo="false">—</div>
+          </div>
+        </div>
+
+        <!-- Apostas laterais ativas -->
+        <div class="craps-laterais">
+          <div class="craps-lateral-info" id="crapsApostasLaterais" data-ativo="false">Qualquer 7: inativo</div>
+          <div class="craps-lateral-info" id="crapsHardWayInfo"     data-ativo="false">Par Duplo: inativo</div>
+        </div>
+
+      </div><!-- /craps-table -->
+
+      <div class="game-panel">
+
+        <!-- Valor da aposta -->
+        <div class="bet-section">
+          <div class="bet-label">Valor da aposta</div>
+          <div class="bet-btns">
+            <button class="bet-btn active" data-valor="10">R$ 10</button>
+            <button class="bet-btn"        data-valor="25">R$ 25</button>
+            <button class="bet-btn"        data-valor="50">R$ 50</button>
+            <button class="bet-btn"        data-valor="100">R$ 100</button>
+          </div>
+        </div>
+
+        <!-- Apostas principais -->
+        <div class="bet-label" style="margin-bottom:8px">Aposta principal (lançamento inicial):</div>
+        <div class="craps-bet-grid">
+          <button class="craps-bet-btn" id="btnCrapsPassLine">
+            ✅ Linha da Sorte
+            <span class="craps-bet-mult">Ganha no 7/11 · paga 2×</span>
+          </button>
+          <button class="craps-bet-btn" id="btnCrapsDontPass">
+            ❌ Contra a Sorte
+            <span class="craps-bet-mult">Ganha no Craps · paga 2×</span>
+          </button>
+        </div>
+
+        <!-- Apostas laterais -->
+        <div class="bet-label" style="margin:12px 0 8px">Apostas laterais (qualquer fase):</div>
+        <div class="craps-bet-grid">
+          <button class="craps-bet-btn" id="btnCrapsAny7">
+            🎯 Qualquer 7
+            <span class="craps-bet-mult">Próximo rolo · paga 4×</span>
+          </button>
+          <button class="craps-bet-btn" id="btnCrapsHardWay">
+            💥 Par Duplo
+            <span class="craps-bet-mult">Par duplo no ponto · paga 8×</span>
+          </button>
+        </div>
+
+        <!-- Rolar -->
+        <button class="btn-main" id="btnCrapsRolar">🎲 ROLAR OS DADOS</button>
+
+        <!-- Resultado -->
+        <div class="resultado neutro" id="resultadoCraps">Faça uma aposta e role os dados</div>
+
+        <!-- Log de rolos -->
+        <div class="craps-log" id="crapsLog"></div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- ── TOAST ─────────────────────────────────────── -->
   <div class="toast" id="toast"></div>
 
@@ -291,6 +388,7 @@
   <script src="../assets/js/cartas.js"></script>
   <script src="../assets/js/limit.js"></script>
   <script src="../assets/js/rocket.js"></script>
+  <script src="../assets/js/craps.js"></script>
   <script src="../assets/js/app.js"></script>
 
 </body>

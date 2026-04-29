@@ -33,7 +33,7 @@ const Cartas = (() => {
     const container = document.getElementById('cartaRevelada');
     const numEl     = document.getElementById('cartaNum');
     if (container && numEl) {
-      numEl.textContent = numero;
+      numEl.innerHTML = `<img src="../assets/img/Carta${numero}.png" alt="Carta ${numero}" class="carta-img-revelada">`;
       container.classList.add('visible');
     }
   }
@@ -52,11 +52,14 @@ const Cartas = (() => {
     UI.setResultado('resultadoCartas', 'Selecione uma carta para começar', 'neutro');
 
     for (let i = 1; i <= TOTAL_CARTAS; i++) {
-      const carta = UI.createElement('div', {
-        className: 'carta-item',
-        textContent: String(i),
-        onclick: () => _selecionar(i, carta),
-      });
+      const carta = document.createElement('div');
+      carta.className = 'carta-item carta-item-img';
+      const img = document.createElement('img');
+      img.src = `../assets/img/Carta${i}.png`;
+      img.alt = `Carta ${i}`;
+      img.className = 'carta-img';
+      carta.appendChild(img);
+      carta.addEventListener('click', () => _selecionar(i, carta));
       grid.appendChild(carta);
     }
   }

@@ -47,6 +47,7 @@ const App = (() => {
 
     // Hooks de inicialização por página
     if (pagina === 'cartas') Cartas.init();
+    if (pagina === 'craps')  Craps.init();
   }
 
   // ── Seletores de aposta ───────────────────────────────────────────────────────
@@ -90,6 +91,13 @@ const App = (() => {
 
     // Rocket
     document.getElementById('btnRocket')?.addEventListener('click', Rocket.iniciar);
+
+    // Craps
+    document.getElementById('btnCrapsRolar')    ?.addEventListener('click', Craps.rolar);
+    document.getElementById('btnCrapsPassLine') ?.addEventListener('click', Craps.apostarPassLine);
+    document.getElementById('btnCrapsDontPass') ?.addEventListener('click', Craps.apostarDontPass);
+    document.getElementById('btnCrapsAny7')     ?.addEventListener('click', Craps.apostarAny7);
+    document.getElementById('btnCrapsHardWay')  ?.addEventListener('click', Craps.apostarHardWay);
 
 
     // Recarregar saldo
