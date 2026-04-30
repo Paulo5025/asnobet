@@ -82,6 +82,11 @@
      gap: 16px;
      margin-bottom: 6px;
    }
+
+   .logo-line img{
+    height: 100px;
+    width: auto;
+   }
    
    .logo-diamond {
      width: 10px; height: 10px;
