@@ -182,8 +182,10 @@ const Craps = (() => {
         const prize = Store.getAposta() * MULT.passLine;
         Store.alterarSaldo(prize);
         UI.setResultado('resultadoCraps', `🎉 Natural ${soma}! +R$ ${prize}`, 'ganhou');
+        UI.mostrarReacao('ganhou');
       } else if (_apostaPrincipal === 'dontPass') {
         UI.setResultado('resultadoCraps', `Natural ${soma} — Contra a Sorte perdeu ❌`, 'perdeu');
+        UI.mostrarReacao('perdeu');
       } else {
         UI.setResultado('resultadoCraps', `Natural ${soma}! Aposte na próxima rodada.`, 'neutro');
       }
@@ -204,9 +206,11 @@ const Craps = (() => {
         Store.alterarSaldo(prize);
         _renderLog(`Craps ${soma} — Contra a Sorte ganha! 🎉`, 'ganhou');
         UI.setResultado('resultadoCraps', `🎉 Craps ${soma}! Contra a Sorte +R$ ${prize}`, 'ganhou');
+        UI.mostrarReacao('ganhou');
       } else if (_apostaPrincipal === 'passLine') {
         _renderLog(`Craps ${soma} — Linha da Sorte perde ❌`, 'perdeu');
         UI.setResultado('resultadoCraps', `Craps ${soma} — Pass Line perdeu ❌`, 'perdeu');
+        UI.mostrarReacao('perdeu');
       } else {
         _renderLog(`Craps ${soma}!`, 'perdeu');
         UI.setResultado('resultadoCraps', `Craps ${soma}! Aposte na próxima.`, 'neutro');
@@ -234,10 +238,13 @@ const Craps = (() => {
         const prize = Store.getAposta() * MULT.passLine;
         Store.alterarSaldo(prize);
         UI.setResultado('resultadoCraps', `🎉 Ponto ${soma}! Linha da Sorte +R$ ${prize}`, 'ganhou');
+        UI.mostrarReacao('ganhou');
       } else if (_apostaPrincipal === 'dontPass') {
         UI.setResultado('resultadoCraps', `Ponto ${soma} — Contra a Sorte perdeu ❌`, 'perdeu');
+        UI.mostrarReacao('perdeu');
       } else {
         UI.setResultado('resultadoCraps', `🎉 Ponto ${soma} acertado!`, 'ganhou');
+        UI.mostrarReacao('ganhou');
       }
 
       _apostaPrincipal = null;
@@ -251,10 +258,13 @@ const Craps = (() => {
         const prize = Store.getAposta() * MULT.dontPass;
         Store.alterarSaldo(prize);
         UI.setResultado('resultadoCraps', `🎉 Saiu Sete! Contra a Sorte +R$ ${prize}`, 'ganhou');
+        UI.mostrarReacao('ganhou');
       } else if (_apostaPrincipal === 'passLine') {
         UI.setResultado('resultadoCraps', `Saiu Sete! Linha da Sorte perdeu ❌`, 'perdeu');
+        UI.mostrarReacao('perdeu');
       } else {
         UI.setResultado('resultadoCraps', `Saiu Sete! Volta ao lançamento inicial.`, 'perdeu');
+        UI.mostrarReacao('perdeu');
       }
 
       _apostaPrincipal = null;

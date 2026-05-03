@@ -83,8 +83,10 @@ const Jackpot = (() => {
           : `🎉 Você ganhou! + R$ ${premio}`;
 
         UI.setResultado('resultadoJackpot', msg, 'ganhou');
+        UI.mostrarReacao('ganhou');
       } else {
         UI.setResultado('resultadoJackpot', 'Tente novamente ❌', 'perdeu');
+        UI.mostrarReacao('perdeu');
       }
 
       btn.disabled = false;

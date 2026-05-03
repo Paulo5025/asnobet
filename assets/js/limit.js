@@ -86,8 +86,10 @@ const Limit = (() => {
         const premio = aposta * mult;
         Store.alterarSaldo(premio);
         UI.setResultado('resultadoLimit', `${label} + R$ ${premio} 🎉`, 'ganhou');
+        UI.mostrarReacao('ganhou');
       } else {
         UI.setResultado('resultadoLimit', 'Você perdeu ❌', 'perdeu');
+        UI.mostrarReacao('perdeu');
       }
 
       _ativarBtn(null);

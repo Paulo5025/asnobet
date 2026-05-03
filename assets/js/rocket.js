@@ -63,6 +63,7 @@ const Rocket = (() => {
 
         btn.innerText = "INICIAR";
         resultado.innerHTML = `Você sacou em ${multiplicador.toFixed(2)}x 💰<br>Ganhou: R$ ${ganho.toFixed(2)}`;
+        UI.mostrarReacao('ganhou');
 
         _reset();
     }
@@ -76,6 +77,7 @@ const Rocket = (() => {
 
         btn.innerText = "INICIAR";
         resultado.innerHTML = `💥 Explodiu em ${crashPoint.toFixed(2)}x — Você perdeu`;
+        UI.mostrarReacao('perdeu');
 
         _reset();
     }

@@ -202,17 +202,40 @@
    .page-header {
      display: flex;
      align-items: center;
-     gap: 16px;
+     gap: 12px;
      max-width: 700px;
      margin: 0 auto;
      padding: 32px 24px 0;
    }
-   
+
    .page-title {
      font-family: var(--font-serif);
      font-size: 1.6rem;
      font-weight: 700;
+     flex: 1;
    }
+
+   .btn-guia {
+     background: rgba(212,168,67,.08);
+     border: 1px solid rgba(212,168,67,.2);
+     color: var(--gold);
+     font-family: var(--font-body);
+     font-size: .75rem;
+     letter-spacing: .15em;
+     text-transform: uppercase;
+     padding: 8px 14px;
+     border-radius: 8px;
+     transition: all .2s;
+     flex-shrink: 0;
+     cursor: pointer;
+   }
+   .btn-guia:hover { background: rgba(212,168,67,.18); box-shadow: 0 0 12px rgba(212,168,67,.15); }
+
+   /* ── Guia modal inner styles ── */
+   #guiaConteudo ul { padding-left: 18px; margin: 8px 0 12px; }
+   #guiaConteudo li { margin-bottom: 6px; }
+   #guiaConteudo h4 { margin: 14px 0 6px; color: gold; font-size: .9rem; }
+   #guiaConteudo p  { margin: 0 0 10px; }
    
    /* ── Game area ── */
    .game-area {

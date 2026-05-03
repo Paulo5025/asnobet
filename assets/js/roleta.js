@@ -118,12 +118,14 @@ const Roleta = (() => {
           `${label} — Você ganhou R$ ${premio}! 🎉`,
           'ganhou'
         );
+        UI.mostrarReacao('ganhou');
       } else {
         UI.setResultado(
           'resultadoRoleta',
           `${label} — Você perdeu ❌`,
           'perdeu'
         );
+        UI.mostrarReacao('perdeu');
       }
 
       _resetarBotoes();

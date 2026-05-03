@@ -95,8 +95,10 @@ const Cartas = (() => {
         const premio = aposta * MULTIPLICADOR;
         Store.alterarSaldo(premio);
         UI.setResultado('resultadoCartas', `🎉 Carta ${sorteada} — VOCÊ GANHOU R$ ${premio}!`, 'ganhou');
+        UI.mostrarReacao('ganhou');
       } else {
         UI.setResultado('resultadoCartas', `Carta ${sorteada} — Você perdeu ❌`, 'perdeu');
+        UI.mostrarReacao('perdeu');
       }
 
       btn.disabled = false;
