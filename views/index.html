@@ -144,6 +144,7 @@
             <button class="bet-btn active" data-valor="10">R$ 10</button>
             <button class="bet-btn" data-valor="25">R$ 25</button>
             <button class="bet-btn" data-valor="50">R$ 50</button>
+            <button class="bet-btn" data-valor="100">R$ 100</button>
           </div>
         </div>
 
@@ -226,6 +227,17 @@
 
         <div class="apostas-grid">
 
+          <!-- Valor da aposta -->
+          <div class="bet-section">
+            <div class="bet-label">Valor da aposta</div>
+            <div class="bet-btns">
+              <button class="bet-btn active" data-valor="10">R$ 10</button>
+              <button class="bet-btn" data-valor="25">R$ 25</button>
+              <button class="bet-btn" data-valor="50">R$ 50</button>
+              <button class="bet-btn" data-valor="100">R$ 100</button>
+            </div>
+          </div>
+
           <div class="aposta-grupo">
             <div class="aposta-grupo-label">Aposta Baixa — intervalo de 25%</div>
             <div class="limit-btns">
@@ -264,37 +276,38 @@
   <!-- ── PAGE: Donkey Rocket ───────────────────────────────── -->
 
   <div id="pageRocket" class="page" data-page="rocket">
-  <div class="page-header">
-    <button class="btn-back" data-navigate="home">← Voltar</button>
-    <div class="page-title">🚀 Donkey Rocket</div>
-    <button class="btn-guia" onclick="UI.abrirGuia('rocket')">📖 Guia</button>
-  </div>
+    <div class="page-header">
+      <button class="btn-back" data-navigate="home">← Voltar</button>
+      <div class="page-title">🚀 Donkey Rocket</div>
+      <button class="btn-guia" onclick="UI.abrirGuia('rocket')">📖 Guia</button>
+    </div>
 
-  <div class="game-area">
-    <div class="game-panel">
-      <div class="rocket-bg" id="rocketBg"></div>
-      <img src="../assets/img/foguete.png" id="rocketImg" class="rocket-img">
+    <div class="game-area">
+      <div class="game-panel">
+        <div class="rocket-bg" id="rocketBg"></div>
+        <img src="../assets/img/foguete.png" id="rocketImg" class="rocket-img">
 
-      <div class="multiplier" id="multiplier">1.00x</div>
+        <div class="multiplier" id="multiplier">1.00x</div>
 
-      <div class="bet-section">
-        <div class="bet-label">Valor da aposta</div>
-        <div class="bet-btns">
-          <button class="bet-btn active" data-valor="10">R$ 10</button>
-          <button class="bet-btn" data-valor="25">R$ 25</button>
-          <button class="bet-btn" data-valor="50">R$ 50</button>
+        <div class="bet-section">
+          <div class="bet-label">Valor da aposta</div>
+          <div class="bet-btns">
+            <button class="bet-btn active" data-valor="10">R$ 10</button>
+            <button class="bet-btn" data-valor="25">R$ 25</button>
+            <button class="bet-btn" data-valor="50">R$ 50</button>
+            <button class="bet-btn" data-valor="100">R$ 100</button>
+          </div>
         </div>
+
+        <button class="btn-main" id="btnRocket">INICIAR</button>
+
+        <div class="resultado neutro" id="resultadoRocket">
+          Clique em iniciar 🚀
+        </div>
+
       </div>
-
-      <button class="btn-main" id="btnRocket">INICIAR</button>
-
-      <div class="resultado neutro" id="resultadoRocket">
-        Clique em iniciar 🚀
-      </div>
-
     </div>
   </div>
-</div>
 
   <!-- ── PAGE: CRAPS ──────────────────────────────── -->
   <div id="pageCraps" class="page">
@@ -329,7 +342,7 @@
         <!-- Apostas laterais ativas -->
         <div class="craps-laterais">
           <div class="craps-lateral-info" id="crapsApostasLaterais" data-ativo="false">Qualquer 7: inativo</div>
-          <div class="craps-lateral-info" id="crapsHardWayInfo"     data-ativo="false">Par Duplo: inativo</div>
+          <div class="craps-lateral-info" id="crapsHardWayInfo" data-ativo="false">Par Duplo: inativo</div>
         </div>
 
       </div><!-- /craps-table -->
@@ -341,9 +354,9 @@
           <div class="bet-label">Valor da aposta</div>
           <div class="bet-btns">
             <button class="bet-btn active" data-valor="10">R$ 10</button>
-            <button class="bet-btn"        data-valor="25">R$ 25</button>
-            <button class="bet-btn"        data-valor="50">R$ 50</button>
-            <button class="bet-btn"        data-valor="100">R$ 100</button>
+            <button class="bet-btn" data-valor="25">R$ 25</button>
+            <button class="bet-btn" data-valor="50">R$ 50</button>
+            <button class="bet-btn" data-valor="100">R$ 100</button>
           </div>
         </div>
 
